@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Lucas Marchioli</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: 'Inter', 'Segoe UI', Arial, sans-serif; 
+            line-height: 1.6; 
+            color: #2d3748; 
+            background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+            min-height: 100vh;
+        }
+        
+        .container { 
+            max-width: 1200px; 
+            margin: 0 auto; 
+            padding: 40px 20px; 
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #dc2626, #ef4444);
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #2d3748;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .header .subtitle {
+            font-size: 1.2rem;
+            color: #dc2626;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+        
+        .header .description {
+            font-size: 1rem;
+            color: #4a5568;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .section {
+            margin-bottom: 50px;
+        }
+        
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #2d3748;
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .section-title i {
+            color: #dc2626;
+            font-size: 1.5rem;
+        }
+        
+        .section-title::after {
+            content: '';
+            flex: 1;
+            height: 3px;
+            background: linear-gradient(90deg, #dc2626, transparent);
+            border-radius: 2px;
+        }
+        
+        .videos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+        
+        .video-card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .video-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #dc2626, #ef4444);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+        
+        .video-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(220, 38, 38, 0.15);
+        }
+        
+        .video-card:hover::before {
+            transform: scaleX(1);
+        }
+        
+        .video-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #2d3748;
+            margin-bottom: 10px;
+            text-decoration: none;
+            display: block;
+            transition: color 0.3s ease;
+        }
+        
+        .video-title:hover {
+            color: #dc2626;
+        }
+        
+        .video-platform {
+            font-size: 0.9rem;
+            color: #718096;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .platform-instagram { color: #e4405f; }
+        .platform-youtube { color: #ff0000; }
+        
+        .contact-section {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .contact-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #dc2626, #ef4444);
+        }
+        
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-top: 20px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1rem;
+            color: #4a5568;
+        }
+        
+        .contact-item i {
+            color: #dc2626;
+            font-size: 1.2rem;
+        }
+        
+        .contact-item a {
+            color: #dc2626;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        .contact-item a:hover {
+            text-decoration: underline;
+        }
+        
+        @media (max-width: 768px) {
+            .container { padding: 20px 10px; }
+            .header { padding: 30px 20px; }
+            .header h1 { font-size: 2rem; }
+            .section-title { font-size: 1.5rem; }
+            .videos-grid { grid-template-columns: 1fr; }
+            .contact-info { flex-direction: column; align-items: center; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>LUCAS MARCHIOLI</h1>
+            <div class="subtitle">Editor de Video & Content Strategist</div>
+            <div class="description">
+                Portfolio de trabajos realizados para @NicoBianchix (+160k seguidores en Instagram). 
+                Especializado en contenido digital para redes sociales con enfoque en engagement y performance.
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2 class="section-title">
+                <i class="fab fa-instagram"></i>
+                REELS para @NicoBianchix
+            </h2>
+            <div class="videos-grid">
+                <div class="video-card">
+                    <a href="https://www.instagram.com/reel/DMoLjdryhwv/" target="_blank" class="video-title">
+                        24hs en el baño
+                    </a>
+                    <div class="video-platform">
+                        <i class="fab fa-instagram platform-instagram"></i>
+                        Instagram Reel
+                    </div>
+                </div>
+                
+                <div class="video-card">
+                    <a href="https://www.instagram.com/reel/DA4NDIIScL4/" target="_blank" class="video-title">
+                        Me encaré a una turca
+                    </a>
+                    <div class="video-platform">
+                        <i class="fab fa-instagram platform-instagram"></i>
+                        Instagram Reel
+                    </div>
+                </div>
+                
+                <div class="video-card">
+                    <a href="https://www.instagram.com/reel/DH1xfYDy5Mx/" target="_blank" class="video-title">
+                        Me sorprendió esta bebida
+                    </a>
+                    <div class="video-platform">
+                        <i class="fab fa-instagram platform-instagram"></i>
+                        Instagram Reel
+                    </div>
+                </div>
+                
+                <div class="video-card">
+                    <a href="https://www.instagram.com/reel/DFygvkOgw3p/" target="_blank" class="video-title">
+                        Project Zomboid
+                    </a>
+                    <div class="video-platform">
+                        <i class="fab fa-instagram platform-instagram"></i>
+                        Instagram Reel
+                    </div>
+                </div>
+                
+                <div class="video-card">
+                    <a href="https://www.instagram.com/reel/DJXOkBey2Fi/" target="_blank" class="video-title">
+                        Las mejores bodegas del mundo
+                    </a>
+                    <div class="video-platform">
+                        <i class="fab fa-instagram platform-instagram"></i>
+                        Instagram Reel
+                    </div>
+                </div>
+                
+                <div class="video-card">
+                    <a href="https://www.instagram.com/reel/C-1bL4UNyPT/" target="_blank" class="video-title">
+                        AnimeCon 2024
+                    </a>
+                    <div class="video-platform">
+                        <i class="fab fa-instagram platform-instagram"></i>
+                        Instagram Reel
+                    </div>
+                </div>
+                
+                <div class="video-card">
+                    <a href="https://www.instagram.com/reel/C-_afNQucFZ/" target="_blank" class="video-title">
+                        Tiempo límite (broma telefónica)
+                    </a>
+                    <div class="video-platform">
+                        <i class="fab fa-instagram platform-instagram"></i>
+                        Instagram Reel
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2 class="section-title">
+                <i class="fab fa-youtube"></i>
+                YOUTUBE para @NicoBianchix
+            </h2>
+            <div class="videos-grid">
+                <div class="video-card">
+                    <a href="https://www.youtube.com/watch?v=ETp_P83F7K0" target="_blank" class="video-title">
+                        Tráiler oficial del canal
+                    </a>
+                    <div class="video-platform">
+                        <i class="fab fa-youtube platform-youtube"></i>
+                        YouTube Video
+                    </div>
+                </div>
+                
+                <div class="video-card">
+                    <a href="https://www.youtube.com/watch?v=vjLsVhrdZOg" target="_blank" class="video-title">
+                        La milanesa más grande
+                    </a>
+                    <div class="video-platform">
+                        <i class="fab fa-youtube platform-youtube"></i>
+                        YouTube Video
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="contact-section">
+            <h2 class="section-title">
+                <i class="fas fa-envelope"></i>
+                Contacto
+            </h2>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <a href="mailto:lucasmarchioli@gmail.com">lucasmarchioli@gmail.com</a>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <span>(+54) 11 5619 6371</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>General San Martín, Buenos Aires</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
