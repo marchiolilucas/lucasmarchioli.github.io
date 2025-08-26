@@ -10,8 +10,8 @@
         body { 
             font-family: 'Inter', 'Segoe UI', Arial, sans-serif; 
             line-height: 1.6; 
-            color: #2d3748; 
-            background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+            color: #e2e8f0; 
+            background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
             min-height: 100vh;
         }
         
@@ -24,10 +24,10 @@
         .header {
             text-align: center;
             margin-bottom: 50px;
-            background: white;
+            background: #2d3748;
             padding: 40px;
             border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
             position: relative;
             overflow: hidden;
         }
@@ -45,21 +45,21 @@
         .header h1 {
             font-size: 2.5rem;
             font-weight: 800;
-            color: #2d3748;
+            color: #f7fafc;
             margin-bottom: 10px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
         
         .header .subtitle {
             font-size: 1.2rem;
-            color: #dc2626;
+            color: #f56565;
             font-weight: 600;
             margin-bottom: 15px;
         }
         
         .header .description {
             font-size: 1rem;
-            color: #4a5568;
+            color: #cbd5e0;
             max-width: 600px;
             margin: 0 auto;
         }
@@ -71,15 +71,16 @@
         .section-title {
             font-size: 2rem;
             font-weight: 700;
-            color: #2d3748;
+            color: #edf2f7;
             margin-bottom: 30px;
             display: flex;
             align-items: center;
             gap: 15px;
+            flex-wrap: wrap;
         }
         
         .section-title i {
-            color: #dc2626;
+            color: #f56565;
             font-size: 1.5rem;
         }
         
@@ -90,6 +91,33 @@
             background: linear-gradient(90deg, #dc2626, transparent);
             border-radius: 2px;
         }
+
+        .social-buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .social-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #fff;
+            text-decoration: none;
+            transition: background 0.3s ease;
+        }
+
+        .btn-instagram { background: #e4405f; }
+        .btn-instagram:hover { background: #c1355a; }
+
+        .btn-tiktok { background: #000; }
+        .btn-tiktok:hover { background: #333; }
+
+        .btn-youtube { background: #ff0000; }
+        .btn-youtube:hover { background: #cc0000; }
         
         .videos-grid {
             display: grid;
@@ -98,10 +126,10 @@
         }
         
         .video-card {
-            background: white;
+            background: #1a202c;
             border-radius: 15px;
             padding: 25px;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.4);
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
@@ -121,32 +149,54 @@
         
         .video-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(220, 38, 38, 0.15);
+            box-shadow: 0 15px 40px rgba(220, 38, 38, 0.3);
         }
         
         .video-card:hover::before {
             transform: scaleX(1);
         }
         
+        .video-thumb {
+            width: 50%;
+            display: block;
+            margin: 0 auto 12px auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            transition: transform 0.3s ease;
+        }
+        
+        .video-thumb:hover {
+            transform: scale(1.03);
+        }
+
         .video-title {
             font-size: 1.1rem;
             font-weight: 700;
-            color: #2d3748;
-            margin-bottom: 10px;
+            color: #edf2f7;
+            margin-bottom: 8px;
             text-decoration: none;
             display: block;
             transition: color 0.3s ease;
+            text-align: center;
         }
         
         .video-title:hover {
-            color: #dc2626;
+            color: #f56565;
         }
         
+        .video-description {
+            font-size: 0.9rem;
+            color: #cbd5e0;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
         .video-platform {
             font-size: 0.9rem;
-            color: #718096;
+            color: #a0aec0;
             display: flex;
             align-items: center;
+            justify-content: center;
             gap: 8px;
         }
         
@@ -154,10 +204,10 @@
         .platform-youtube { color: #ff0000; }
         
         .contact-section {
-            background: white;
+            background: #2d3748;
             padding: 40px;
             border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
             text-align: center;
             position: relative;
             overflow: hidden;
@@ -186,16 +236,16 @@
             align-items: center;
             gap: 10px;
             font-size: 1rem;
-            color: #4a5568;
+            color: #e2e8f0;
         }
         
         .contact-item i {
-            color: #dc2626;
+            color: #f56565;
             font-size: 1.2rem;
         }
         
         .contact-item a {
-            color: #dc2626;
+            color: #f56565;
             text-decoration: none;
             font-weight: 600;
         }
@@ -229,76 +279,81 @@
             <h2 class="section-title">
                 <i class="fab fa-instagram"></i>
                 REELS para @NicoBianchix
+                <div class="social-buttons">
+                    <a href="https://www.instagram.com/nicobianchix/" target="_blank" class="social-btn btn-instagram"><i class="fab fa-instagram"></i> Instagram</a>
+                    <a href="https://www.tiktok.com/@nicobianchix" target="_blank" class="social-btn btn-tiktok"><i class="fab fa-tiktok"></i> TikTok</a>
+                    <a href="https://www.youtube.com/@NicoBianchix/shorts" target="_blank" class="social-btn btn-youtube"><i class="fab fa-youtube"></i> YouTube Shorts</a>
+                </div>
             </h2>
             <div class="videos-grid">
                 <div class="video-card">
+                    <a href="https://www.instagram.com/reel/DMoLjdryhwv/" target="_blank">
+                        <img class="video-thumb" src="https://raw.githubusercontent.com/marchiolilucas/marchiolilucas.github.io/refs/heads/main/24hs%20en%20el%20ba%C3%B1o.png" alt="24hs en el baño">
+                    </a>
                     <a href="https://www.instagram.com/reel/DMoLjdryhwv/" target="_blank" class="video-title">
                         24hs en el baño
                     </a>
-                    <div class="video-platform">
-                        <i class="fab fa-instagram platform-instagram"></i>
-                        Instagram Reel
-                    </div>
+                    <div class="video-description">Reto de 24 horas sobreviviendo en un baño, con mucho humor.</div>
                 </div>
 
                 <div class="video-card">
+                    <a href="https://www.instagram.com/reel/C-1bL4UNyPT/" target="_blank">
+                        <img class="video-thumb" src="https://raw.githubusercontent.com/marchiolilucas/marchiolilucas.github.io/refs/heads/main/Animecon%202024.png" alt="AnimeCon 2024">
+                    </a>
                     <a href="https://www.instagram.com/reel/C-1bL4UNyPT/" target="_blank" class="video-title">
                         AnimeCon 2024
                     </a>
-                    <div class="video-platform">
-                        <i class="fab fa-instagram platform-instagram"></i>
-                        Instagram Reel
-                    </div>
+                    <div class="video-description">Un vistazo divertido a lo mejor de AnimeCon 2024.</div>
                 </div>
                 
                 <div class="video-card">
+                    <a href="https://www.instagram.com/reel/C-_afNQucFZ/" target="_blank">
+                        <img class="video-thumb" src="https://raw.githubusercontent.com/marchiolilucas/marchiolilucas.github.io/refs/heads/main/Tiempo%20limite.png" alt="Tiempo límite (broma telefónica)">
+                    </a>
                     <a href="https://www.instagram.com/reel/C-_afNQucFZ/" target="_blank" class="video-title">
                         Tiempo límite (broma telefónica)
                     </a>
-                    <div class="video-platform">
-                        <i class="fab fa-instagram platform-instagram"></i>
-                        Instagram Reel
-                    </div>
+                    <div class="video-description">Broma telefónica con preguntas rápidas y risas aseguradas.</div>
                 </div>
                 
                 <div class="video-card">
+                    <a href="https://www.instagram.com/reel/DA4NDIIScL4/" target="_blank">
+                        <img class="video-thumb" src="https://raw.githubusercontent.com/marchiolilucas/marchiolilucas.github.io/refs/heads/main/Me%20encare%20a%20una%20turca.png" alt="Me encaré a una turca">
+                    </a>
                     <a href="https://www.instagram.com/reel/DA4NDIIScL4/" target="_blank" class="video-title">
                         Me encaré a una turca
                     </a>
-                    <div class="video-platform">
-                        <i class="fab fa-instagram platform-instagram"></i>
-                        Instagram Reel
-                    </div>
+                    <div class="video-description">El streamer se lanza con humor a conquistar en Kick.</div>
                 </div>
                 
                 <div class="video-card">
+                    <a href="https://www.instagram.com/reel/DH1xfYDy5Mx/" target="_blank">
+                        <img class="video-thumb" src="https://raw.githubusercontent.com/marchiolilucas/marchiolilucas.github.io/refs/heads/main/Me%20sorprendio%20esta%20bebida.png" alt="Me sorprendió esta bebida">
+                    </a>
                     <a href="https://www.instagram.com/reel/DH1xfYDy5Mx/" target="_blank" class="video-title">
                         Me sorprendió esta bebida
                     </a>
-                    <div class="video-platform">
-                        <i class="fab fa-instagram platform-instagram"></i>
-                        Instagram Reel
-                    </div>
+                    <div class="video-description">Comparación graciosa y seria entre dos gaseosas.</div>
                 </div>
                 
                 <div class="video-card">
-                    <a href="https://www.instagram.com/reel/DFygvkOgw3p/" target="_blank" class="video-title">
-                        Project Zomboid
+                    <a href="https://www.instagram.com/reel/DFygvkOgw3p/" target="_blank">
+                        <img class="video-thumb" src="https://raw.githubusercontent.com/marchiolilucas/marchiolilucas.github.io/refs/heads/main/No%20juegues%20con%20fuego.png" alt="No juegues con fuego">
                     </a>
-                    <div class="video-platform">
-                        <i class="fab fa-instagram platform-instagram"></i>
-                        Instagram Reel
-                    </div>
+                    <a href="https://www.instagram.com/reel/DFygvkOgw3p/" target="_blank" class="video-title">
+                        No juegues con fuego
+                    </a>
+                    <div class="video-description">Accidente inesperado dentro de Project Zomboid.</div>
                 </div>
                 
                 <div class="video-card">
+                    <a href="https://www.instagram.com/reel/DJXOkBey2Fi/" target="_blank">
+                        <img class="video-thumb" src="https://raw.githubusercontent.com/marchiolilucas/marchiolilucas.github.io/refs/heads/main/Las%20mejores%20bodegas%20del%20mundo.jpg" alt="Las mejores bodegas del mundo">
+                    </a>
                     <a href="https://www.instagram.com/reel/DJXOkBey2Fi/" target="_blank" class="video-title">
                         Las mejores bodegas del mundo
                     </a>
-                    <div class="video-platform">
-                        <i class="fab fa-instagram platform-instagram"></i>
-                        Instagram Reel
-                    </div>
+                    <div class="video-description">Vlog con humor recorriendo una prestigiosa bodega en Mendoza.</div>
                 </div>
                 
             </div>
@@ -308,26 +363,29 @@
             <h2 class="section-title">
                 <i class="fab fa-youtube"></i>
                 YOUTUBE para @NicoBianchix
+                <div class="social-buttons">
+                    <a href="https://www.youtube.com/@NicoBianchix" target="_blank" class="social-btn btn-youtube"><i class="fab fa-youtube"></i> YouTube</a>
+                </div>
             </h2>
             <div class="videos-grid">
                 <div class="video-card">
+                    <a href="https://www.youtube.com/watch?v=vjLsVhrdZOg" target="_blank">
+                        <img class="video-thumb" src="https://img.youtube.com/vi/vjLsVhrdZOg/hqdefault.jpg" alt="La milanesa más grande">
+                    </a>
                     <a href="https://www.youtube.com/watch?v=vjLsVhrdZOg" target="_blank" class="video-title">
                         La milanesa más grande
                     </a>
-                    <div class="video-platform">
-                        <i class="fab fa-youtube platform-youtube"></i>
-                        YouTube Video
-                    </div>
+                    <div class="video-description">Probamos la milanesa más grande de Capital con toque de comedia.</div>
                 </div>
             
                 <div class="video-card">
+                    <a href="https://www.youtube.com/watch?v=ETp_P83F7K0" target="_blank">
+                        <img class="video-thumb" src="https://img.youtube.com/vi/ETp_P83F7K0/hqdefault.jpg" alt="Tráiler oficial del canal">
+                    </a>
                     <a href="https://www.youtube.com/watch?v=ETp_P83F7K0" target="_blank" class="video-title">
                         Tráiler oficial del canal
                     </a>
-                    <div class="video-platform">
-                        <i class="fab fa-youtube platform-youtube"></i>
-                        YouTube Video
-                    </div>
+                    <div class="video-description">Resumen breve y divertido del contenido del canal y streams.</div>
                 </div>            
             </div>
         </div>
